@@ -1,0 +1,102 @@
+table {
+  table-layout: fixed;
+  font-size: 1vw !important;
+}
+
+th {
+  color: white !important;
+  background-color: #333333 !important;
+  border-right: 1px solid #9c9c9c;
+}
+
+td:not(.selector td) {
+  border: 1px solid #9c9c9c;
+}
+
+td:not(.selector td, .not-working, .worker_name) {
+  text-align: center;
+  font-weight: bold;
+}
+
+.worker_name {
+  background-color: #eaf8e6 !important;
+  border-right: 1px solid black !important;
+}
+
+.days {
+  color: black !important;
+  font-size: 20px;
+}
+
+.selector {
+  color: black !important;
+}
+
+.selector tr:nth-child(2) td {
+  border-top: 1px solid #9c9c9c;
+}
+
+.selected_name {
+  background-color: orange !important;
+  text-align: center;
+}
+
+.work_selector {
+  background-color: #b8cbfa;
+}
+
+.save_btn {
+  margin: 20px 0 50px 0;
+}
+
+.page_selector {
+  font-size: 1vw;
+}
+
+.page_selectors {
+  border: 1px solid #b8cbfa;
+  margin: 0 30% 20px 30%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #e7edfd;
+}
+
+.table-name {
+  text-align: center;
+  background-color: #5c5c5c !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 20px 20px 0 0;
+  color: orange !important;
+}
+
+.one-group {
+  padding: 10px 40px;
+  margin: 40px 0;
+  border-bottom: 3px solid #a1b8f7;
+}
+
+.office {
+  background-color: #00ccff !important;
+}
+
+.home {
+  background-color: #00cc66 !important;
+}
+
+@media screen and (max-width: 1300px) {
+  table {
+    font-size: 1.5vw !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  table {
+    font-size: 2.5vw !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page_selector {
+    font-size: 2.5vw;
+  }
+}

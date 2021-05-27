@@ -13,7 +13,7 @@ const changeFormHeight = (param) => {
       break;
 
     case "register":
-      form.style.minHeight = "800px";
+      form.style.minHeight = "850px";
       break;
 
     default:

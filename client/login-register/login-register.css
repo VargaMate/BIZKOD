@@ -201,3 +201,7 @@ a {
 ::placeholder {
   color: #b3b3b3;
 }
+
+.departments option {
+  color: #000;
+}
