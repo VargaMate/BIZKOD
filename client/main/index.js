@@ -1,3 +1,4 @@
+//tables data from server
 const tablesData = {
   poslovi: {
     current_week: [
@@ -49,7 +50,78 @@ const tablesData = {
   },
 };
 
-function loadTablesCurrentWeek() {
+//user data from server
+const data = {
+  user: {
+    user_f_name: "Akos",
+    user_l_name: "Nagy",
+    email: "valami@gmail.com",
+    id: 1,
+  },
+};
+document.getElementById("username").innerHTML =
+  data.user.user_f_name + " " + data.user.user_l_name;
+
+const loadUser = async () => {
+  const username = document.getElementById("username");
+
+  await fetch("https://example.com/profile", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      username.innerHTML = data.user.user_f_name + " " + data.user.user_l_name;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+const sendData = () => {
+  const current_week = [];
+  const next_week = [];
+  for (let i = 0; i < 7; i++) {
+    if (document.getElementById("current_week" + (i + 1)).checked) {
+      current_week.push(1);
+    } else {
+      current_week.push(0);
+    }
+
+    if (document.getElementById("next_week" + (i + 1)).checked) {
+      next_week.push(1);
+    } else {
+      next_week.push(0);
+    }
+  }
+
+  const data = {
+    current_week,
+    next_week,
+    user_id: user.id,
+  };
+
+  fetch("https://example.com/profile", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("error").style.display = "none";
+      document.getElementById("success").style.display = "block";
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      document.getElementById("error").style.display = "block";
+      document.getElementById("success").style.display = "none";
+      console.error("Error:", error);
+    });
+};
+
+const loadTablesCurrentWeek = () => {
   const posloviTable = document.getElementById("poslovi");
   const posloviRowsCount = tablesData.poslovi.current_week.length;
 
@@ -124,7 +196,7 @@ function loadTablesCurrentWeek() {
       }
     }
   }
-}
+};
 
 function loadPosloviTable(week) {
   const posloviTable = document.getElementById("poslovi");
@@ -212,6 +284,7 @@ function loadFourzidaTable(week) {
 
 const windowLoad = () => {
   loadTablesCurrentWeek();
+  loadUser();
 };
 
 window.addEventListener("load", windowLoad);

@@ -30,6 +30,7 @@ td:not(.selector td, .not-working, .worker_name) {
 
 .selector {
   color: black !important;
+  min-width: 500px;
 }
 
 .selector tr:nth-child(2) td {
@@ -39,6 +40,7 @@ td:not(.selector td, .not-working, .worker_name) {
 .selected_name {
   background-color: orange !important;
   text-align: center;
+  font-size: 25px;
 }
 
 .work_selector {
@@ -83,6 +85,36 @@ td:not(.selector td, .not-working, .worker_name) {
   background-color: #00cc66 !important;
 }
 
+.form-switch {
+  display: inline-block;
+  margin-left: -30px;
+}
+
+.color {
+  position: relative;
+}
+
+.fa-home {
+  position: relative;
+  top: -3px;
+  color: #66cc66;
+  font-size: 25px;
+}
+
+.fa-briefcase {
+  position: relative;
+  top: -3px;
+  left: 45px;
+  color: #7096f5;
+  font-size: 25px;
+}
+
+.alert {
+  width: 30%;
+  min-width: 200px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 1300px) {
   table {
     font-size: 1.5vw !important;
@@ -93,9 +125,6 @@ td:not(.selector td, .not-working, .worker_name) {
   table {
     font-size: 2.5vw !important;
   }
-}
-
-@media screen and (max-width: 1000px) {
   .page_selector {
     font-size: 2.5vw;
   }

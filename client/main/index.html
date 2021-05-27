@@ -5,6 +5,7 @@
   <title>Home</title>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/204692009e.js"></script>
   <link rel="stylesheet" href="index.css">
 </head>
 
@@ -13,7 +14,7 @@
   <table class="selector table table-borderless">
     <thead>
       <tr>
-        <th scope="col" class="selected_name">Akos</th>
+        <th scope="col" id="username" class="selected_name"></th>
         <th scope="col">Monday</th>
         <th scope="col">Tuesday</th>
         <th scope="col">Wednesday</th>
@@ -29,32 +30,49 @@
 
         <td class="week">Current week</td>
         <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" id="current_week1">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week2">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week3">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week4">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week5">
+          </div>
         </td>
         <td class="color">
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" id="current_week6" disabled>
+          </div>
         </td>
         <td class="color">
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" disabled>
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"  disabled>
+            <input class="form-check-input" type="checkbox" id="current_week7"  disabled>
+          </div>
         </td>
       </tr>
 
@@ -62,32 +80,49 @@
 
         <td class="week">Next week</td>
         <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" id="next_week1">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week2">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week3">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week4">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week5">
+          </div>
         </td>
         <td class="color">
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" id="next_week6"  disabled>
+          </div>
         </td>
         <td class="color">
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"  disabled>
-        </td>
-        <td class="color">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"  disabled>
+            <input class="form-check-input" type="checkbox" id="next_week7"  disabled>
+          </div>
         </td>
       </tr>
 
@@ -95,7 +130,14 @@
   </table>
 
   <div class="text-center">
-    <button type="button" class="btn btn-outline-danger btn-lg save_btn">Save changes</button>
+    <button type="button" class="btn btn-outline-danger btn-lg save_btn" onClick="sendData();">Save changes</button>
+  </div>
+
+  <div id="success" style="display: none" class="alert alert-success" role="alert">
+    Successfully Saved!
+  </div>
+  <div id="error" style="display: none" class="alert alert-danger" role="alert">
+    Error!
   </div>
 
   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -118,7 +160,7 @@
       <thead>
         <tr><th class="table-name" colspan="8">Poslovi</th></tr>
         <tr>
-          <th scope="col"></th>
+          <th scope="col">Name</th>
           <th scope="col">Monday</th>
           <th scope="col">Tuesday</th>
           <th scope="col">Wednesday</th>
@@ -151,7 +193,7 @@
       <thead>
         <tr><th class="table-name" colspan="8">Polovni Automobili</th></tr>
         <tr>
-          <th scope="col"></th>
+          <th scope="col">Name</th>
           <th scope="col">Monday</th>
           <th scope="col">Tuesday</th>
           <th scope="col">Wednesday</th>
@@ -183,7 +225,7 @@
       <thead>
         <tr><th class="table-name" colspan="8">4zida</th></tr>
         <tr>
-          <th scope="col"></th>
+          <th scope="col">Name</th>
           <th scope="col">Monday</th>
           <th scope="col">Tuesday</th>
           <th scope="col">Wednesday</th>
