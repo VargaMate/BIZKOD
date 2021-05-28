@@ -70,6 +70,27 @@ const checkPasswords = () => {
   }
 };
 
+const checkDepartmentSelected = () => {
+  const departmentLabel = document.getElementById("department-label");
+  const department = document.getElementById("department");
+
+  const reset = () => {
+    departmentLabel.innerHTML = "DEPARTMENT";
+    departmentLabel.style.color = "#aaa";
+    department.style.border = "none";
+  };
+
+  if (department.value === -1) {
+    departmentLabel.innerHTML = "DEPARTMENT (Please select one!)";
+    departmentLabel.style.color = "#f00";
+    department.style.border = "1px solid #f00";
+
+    department.addEventListener("change", reset);
+    return false;
+  }
+  return true;
+};
+
 const login = async (event) => {
   event.preventDefault();
 
@@ -94,7 +115,16 @@ const login = async (event) => {
       window.location.replace("../main/index.html");
     })
     .catch((error) => {
-      document.getElementById("error-login").style.display = "block";
+      const errorAlert = document.getElementById("error-login");
+
+      errorAlert.style.display = "block";
+
+      const hideErrorAlert = () => {
+        errorAlert.style.display = "none";
+      };
+      email.addEventListener("change", hideErrorAlert);
+      password.addEventListener("change", hideErrorAlert);
+
       console.error("Error:", error);
     });
 };
@@ -102,7 +132,7 @@ const login = async (event) => {
 const register = async (event) => {
   event.preventDefault();
 
-  if (checkPasswords()) {
+  if (checkPasswords() && checkDepartmentSelected()) {
     const fName = document.getElementById("f-name").value;
     const lName = document.getElementById("l-name").value;
     const password = document.getElementById("pass-register").value;
@@ -131,8 +161,21 @@ const register = async (event) => {
         console.log("Success:", data);
       })
       .catch((error) => {
-        document.getElementById("error-register").style.display = "block";
+        const errorAlert = document.getElementById("error-register");
+
+        errorAlert.style.display = "block";
         document.getElementById("success-register").style.display = "none";
+
+        const hideErrorAlert = () => {
+          errorAlert.style.display = "none";
+        };
+
+        fName.addEventListener("change", hideErrorAlert);
+        lName.addEventListener("change", hideErrorAlert);
+        password.addEventListener("change", hideErrorAlert);
+        email.addEventListener("change", hideErrorAlert);
+        department.addEventListener("change", hideErrorAlert);
+
         console.error("Error:", error);
       });
   }

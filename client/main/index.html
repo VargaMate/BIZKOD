@@ -20,8 +20,8 @@
         <th scope="col">Wednesday</th>
         <th scope="col">Thursday</th>
         <th scope="col">Friday</th>
-        <th scope="col">Saturday</th>
-        <th scope="col">Sunday</th>
+        <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+        <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
       </tr>
     </thead>
     <tbody>
@@ -140,9 +140,17 @@
     Error!
   </div>
 
-  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  <div class="form-group">
+    <label for="departments">Departments:</label>
+    <select class="departments" id="departments" onchange="departmentsFilter()">
+      <option value="all">-all-</option>
+      <option value="1">Poslovi</option>
+      <option value="2">Polovni Automobili</option>
+      <option value="3">4zida</option>
+    </select>
+  </div>
 
-  <div class="one-group">
+  <div class="one-group" id="poslovi-info">
 
     <div class="d-flex justify-content-around page_selectors">
 
@@ -166,8 +174,8 @@
           <th scope="col">Wednesday</th>
           <th scope="col">Thursday</th>
           <th scope="col">Friday</th>
-          <th scope="col">Saturday</th>
-          <th scope="col">Sunday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -175,7 +183,7 @@
 
   </div>
 
-  <div class="one-group">
+  <div class="one-group" id="polovni-info">
 
     <div class="d-flex justify-content-around page_selectors">
 
@@ -199,15 +207,15 @@
           <th scope="col">Wednesday</th>
           <th scope="col">Thursday</th>
           <th scope="col">Friday</th>
-          <th scope="col">Saturday</th>
-          <th scope="col">Sunday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
         </tr>
         <tbody></tbody>
       </thead>
     </table>
   </div>
 
-  <div class="one-group">
+  <div class="one-group" id="4zida-info">
 
     <div class="d-flex justify-content-around page_selectors">
 
@@ -231,8 +239,8 @@
           <th scope="col">Wednesday</th>
           <th scope="col">Thursday</th>
           <th scope="col">Friday</th>
-          <th scope="col">Saturday</th>
-          <th scope="col">Sunday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
         </tr>
         <tbody></tbody>
       </thead>

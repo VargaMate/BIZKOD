@@ -51,16 +51,14 @@ const tablesData = {
 };
 
 //user data from server
-const data = {
-  user: {
-    user_f_name: "Akos",
-    user_l_name: "Nagy",
-    email: "valami@gmail.com",
-    id: 1,
-  },
+const user = {
+  user_f_name: "Akos",
+  user_l_name: "Nagy",
+  email: "valami@gmail.com",
+  id: 1,
 };
 document.getElementById("username").innerHTML =
-  data.user.user_f_name + " " + data.user.user_l_name;
+  user.user_f_name + " " + user.user_l_name;
 
 const loadUser = async () => {
   const username = document.getElementById("username");
@@ -78,7 +76,10 @@ const loadUser = async () => {
     });
 };
 
-const sendData = () => {
+const sendData = async () => {
+  const errorAlert = document.getElementById("error");
+  const successAlert = document.getElementById("success");
+
   const current_week = [];
   const next_week = [];
   for (let i = 0; i < 7; i++) {
@@ -101,7 +102,7 @@ const sendData = () => {
     user_id: user.id,
   };
 
-  fetch("https://example.com/profile", {
+  await fetch("https://example.com/profile", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -110,15 +111,31 @@ const sendData = () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      document.getElementById("error").style.display = "none";
-      document.getElementById("success").style.display = "block";
+      errorAlert.style.display = "none";
+      successAlert.style.display = "block";
+
       console.log("Success:", data);
     })
     .catch((error) => {
-      document.getElementById("error").style.display = "block";
-      document.getElementById("success").style.display = "none";
+      successAlert.style.display = "none";
+      errorAlert.style.display = "block";
+
       console.error("Error:", error);
     });
+
+  const hideAlerts = () => {
+    errorAlert.style.display = "none";
+    successAlert.style.display = "none";
+  };
+
+  for (let i = 0; i < 7; i++) {
+    document
+      .getElementById("current_week" + (i + 1))
+      .addEventListener("change", hideAlerts);
+    document
+      .getElementById("next_week" + (i + 1))
+      .addEventListener("change", hideAlerts);
+  }
 };
 
 const loadTablesCurrentWeek = () => {
@@ -281,6 +298,43 @@ function loadFourzidaTable(week) {
     }
   }
 }
+
+const departmentsFilter = () => {
+  const filter = document.getElementById("departments").value;
+
+  const poslovi = document.getElementById("poslovi-info");
+  const polovni = document.getElementById("polovni-info");
+  const fourzida = document.getElementById("4zida-info");
+
+  switch (filter) {
+    case "all":
+      poslovi.style.display = "block";
+      polovni.style.display = "block";
+      fourzida.style.display = "block";
+      break;
+
+    case "1":
+      poslovi.style.display = "block";
+      polovni.style.display = "none";
+      fourzida.style.display = "none";
+      break;
+
+    case "2":
+      poslovi.style.display = "none";
+      polovni.style.display = "block";
+      fourzida.style.display = "none";
+      break;
+
+    case "3":
+      poslovi.style.display = "none";
+      polovni.style.display = "none";
+      fourzida.style.display = "block";
+      break;
+
+    default:
+      break;
+  }
+};
 
 const windowLoad = () => {
   loadTablesCurrentWeek();
