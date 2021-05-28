@@ -9,7 +9,7 @@ class Config
 
     function __construct()
     {
-        $this->dns = 'mysql:dbname=bizkod;host=localhost';
+        $this->dns = 'mysql:dbname=biz_kod;host=localhost';
         $this->username = 'root';
         $this->password = '';
     }

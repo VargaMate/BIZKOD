@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3da6e4c6-b7d3-40dc-b139-7cd50b6da2bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/BIZKOD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/login-register/bizkod.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/login-register/classes/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/login-register/login-register.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/login-register.php" afterDir="false" />
+    <list default="true" id="18eb7986-373e-4b9c-8532-18503c385416" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/login-register/biz_kod.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/css/Login-Form-Dark-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/img/star-sky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/bizkod.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/data_login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/data_registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/db_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/registered.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/registered.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/login-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/login-register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/login-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/login-register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,28 +46,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectId" id="1szjbxB81ZxqtZ9TgufiHyLZFZz" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1t9ejmqfQSsxFxeQo42vrhtOJOY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -48,26 +62,22 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\varga\Downloads\BIZKOD-20210526T174712Z-001\BIZKOD\client\login-register" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\BIZKOD\client\login-register" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3da6e4c6-b7d3-40dc-b139-7cd50b6da2bb" name="Default Changelist" comment="" />
-      <created>1621882387444</created>
+      <changelist id="18eb7986-373e-4b9c-8532-18503c385416" name="Default Changelist" comment="" />
+      <created>1622185872927</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1621882387444</updated>
-      <workItem from="1621882388944" duration="805000" />
-      <workItem from="1621952456065" duration="749000" />
-      <workItem from="1621961539595" duration="2902000" />
-      <workItem from="1622043408455" duration="614000" />
-      <workItem from="1622044924318" duration="8000" />
-      <workItem from="1622044934570" duration="47000" />
-      <workItem from="1622045205723" duration="24000" />
-      <workItem from="1622051404370" duration="2029000" />
+      <updated>1622185872927</updated>
+      <workItem from="1622185875478" duration="5504000" />
+      <workItem from="1622191537259" duration="645000" />
+      <workItem from="1622203447018" duration="13000" />
+      <workItem from="1622203488022" duration="744000" />
     </task>
     <servers />
   </component>
@@ -77,31 +87,6 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="85bc1049-d5ee-4134-be3a-ec4a09dff739">
-          <value>
-            <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="roots">
-                    <value>
-                      <list>
-                        <option value="$PROJECT_DIR$" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -109,14 +94,6 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="85bc1049-d5ee-4134-be3a-ec4a09dff739" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

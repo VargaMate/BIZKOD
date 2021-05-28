@@ -1,5 +1,6 @@
 <?php
-include_once 'db_config.php';
+include_once 'Config.php';
+include_once 'Session.php';
 
 class Login
 {
@@ -30,17 +31,17 @@ class Login
 
     private function routeFolder(): string
     {
-        return '/BIZKOD/client/login-register/';
+        return '/BIZKOD/client/';
     }
 
     private function routeFile(): string
     {
-        return $this->routeFolder() . 'classes/registered.php';
+        return $this->routeFolder() . 'main/index.html';
     }
 
     private function routeFileError(): string
     {
-        return $this->routeFolder() . 'login-register.php';
+        return $this->routeFolder() . '/login-register/login-register.php';
     }
 
     private function validateBtn(): bool
@@ -121,6 +122,8 @@ class Login
                 if ($stm->rowCount()) {
                     $row = $stm->fetch(PDO::FETCH_OBJ);
                     if (password_verify($password,$row->password)) {
+                        $session = new Session($email);
+                        $session->setSession();
                         $result = 0;
                     } else {
                         $result = 4;
@@ -148,3 +151,6 @@ class Login
         exit();
     }
 }
+
+$user = new Login($_POST['email'], $_POST['password'],$_POST['login']);
+$user->runLogin();

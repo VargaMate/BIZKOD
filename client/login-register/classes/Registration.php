@@ -1,21 +1,21 @@
 <?php
-include 'db_config.php';
+include 'Config.php';
 class Registration
 {
     private string $firstname;
     private string $lastname;
     private string $password;
     private string $email;
-    private string $btn;
+    private int $select;
 
 
-    function __construct(string $firstname, string $lastname, string $password, string $email, string $btn)
+    function __construct(string $firstname, string $lastname, string $password, string $email, int $select)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->password = $password;
         $this->email = $email;
-        $this->btn = $btn;
+        $this->select = $select;
     }
 
     private function getFirstname(): string
@@ -42,9 +42,13 @@ class Registration
     {
         return $this->btn;
     }
+    private function getSelect():string
+    {
+        return $this->select;
+    }
     private function routeFolder(): string
     {
-        return '/BIZKOD/client/login-register/';
+        return 'BIZKOD/client/login-register/';
     }
     private function routeFile(): string
     {
@@ -78,16 +82,6 @@ class Registration
         return $result;
     }
 
-    private function validateBtn(): bool
-    {
-        $btn = $this->getBtn();
-        if (isset($btn)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     private function validateEmail(): string
     {
         $email = $this->getEmail();
@@ -107,8 +101,11 @@ class Registration
     private function validatePassword(): string
     {
         $password = $this->getPassword();
+        $number    = preg_match('@[0-9]@', $password);
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
         if (isset($password) && !empty($password)) {
-            if (strlen($password) >= 8) {
+            if (strlen($password) >= 8 && $uppercase && $lowercase && $number) {
                 $result = $password;
             } else {
                 $result = "";
@@ -119,18 +116,39 @@ class Registration
 
         return $result;
     }
-
-    private function validateAll(): bool
+    private function validateSelect():int{
+            $select = $this->getSelect();
+            if(isset($select) && !empty($select)) {
+                if ($select < 0) {
+                    $result = 0;
+                }else{
+                    $result = $select;
+                }
+            }
+            return $result;
+    }
+    private function validateAll(): int
     {
         $firstname = $this->validateFirstname();
         $lastname = $this->validateLastname();
         $email = $this->validateEmail();
         $password = $this->validatePassword();
-        $btn = $this->validateBtn();
-        if (isset($firstname) && !empty($firstname) && isset($lastname) && !empty($lastname) && isset($email) && !empty($email) && isset($password) && !empty($password) && $btn) {
-            $result = true;
-        } else {
-            $result = false;
+        $select = $this->validateSelect();
+        $result = 0;
+        if (!isset($firstname) && empty($firstname)) {
+            $result = 6 ;
+        }
+        if (!isset($lastname) && empty($lastname)) {
+            $result = 7 ;
+        }
+        if (!isset($email) && empty($email)) {
+            $result = 8 ;
+        }
+        if (!isset($password) && empty($password)) {
+            $result = 9 ;
+        }
+        if (!isset($select) && empty($select)) {
+            $result = 10 ;
         }
         return $result;
     }
@@ -141,49 +159,55 @@ class Registration
         return $con->Connect();
     }
 
-    private function registerUser()
+    private function registerUser():int
     {
         $firstname = $this->validateFirstname();
         $lastname = $this->validateLastname();
         $email = $this->validateEmail();
         $password = $this->validatePassword();
+        $select = $this->validateSelect();
         $db = $this->Connection();
-
         $Hashed_Password = password_hash($password,PASSWORD_DEFAULT);
-
         $data = [
             ':firstname'=>$firstname,
             ':lastname'=>$lastname,
             ':email'=>$email,
-            ':password'=>$Hashed_Password
+            ':password'=>$Hashed_Password,
+            ':role'=>$select
         ];
-        $used_email = "SELECT * FROM users WHERE email = '$email'";
-        if($result = $db->query($used_email)) {
-            if($check = $result->rowCount()){
-                $result = 5;
+
+        $used_email = "SELECT * FROM users WHERE email = :email";
+        $stm = $db->prepare($used_email);
+        $stm->bindValue(':email', $email);
+        if($stm->execute()) {
+            if($stm->rowCount()){
+                $result =5;
+            }else{
+                if ($this->validateAll() > 0){
+                    $result = $this->validateAll();
+                }
+                else{
+                    $sql = "INSERT INTO users(f_name,l_name,email,password,role) VALUES(:firstname,:lastname,:email,:password,:role)";
+                    $stm = $db->prepare($sql);
+                    $stm->execute($data);
+                    $result = 0;
+                }
             }
-        }
-
-        if ($this->validateAll()) {
-
-        $sql = "INSERT INTO users(firstname,lastname,email,password) VALUES(:firstname,:lastname,:email,:password)";
-        $stm = $db->prepare($sql);
-        $stm->execute($data);
-        $result = 0;
         }
         return $result;
     }
     public function runRegistration(){
         $result = $this->registerUser();
-        if($result>0){
+        if($result > 0){
             header('Location:'.$this->routeFileError().'?err_num='.$result.'');
-            exit();
         }else{
             header('Location:'.$this->routeFile().'');
-            exit();
         }
+        exit();
     }
 }
+$user = new Registration($_POST['f-name'], $_POST['l-name'], $_POST['password'],$_POST['email'],$_POST['department']);
+$user->runRegistration();
 
 
 

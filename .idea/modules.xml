@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BIZKOD.iml" filepath="$PROJECT_DIR$/.idea/BIZKOD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Bizkod.iml" filepath="$PROJECT_DIR$/.idea/Bizkod.iml" />
     </modules>
   </component>
 </project>
