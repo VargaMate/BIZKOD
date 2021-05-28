@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/204692009e.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <table class="selector table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col" id="username" class="selected_name"></th>
+        <th scope="col">Monday</th>
+        <th scope="col">Tuesday</th>
+        <th scope="col">Wednesday</th>
+        <th scope="col">Thursday</th>
+        <th scope="col">Friday</th>
+        <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+        <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="work_selector">
+
+        <td class="week">Current week</td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week1">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week2">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week3">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week4">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week5">
+          </div>
+        </td>
+        <td class="color">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week6" disabled>
+          </div>
+        </td>
+        <td class="color">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="current_week7"  disabled>
+          </div>
+        </td>
+      </tr>
+
+      <tr class="work_selector">
+
+        <td class="week">Next week</td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week1">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week2">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week3">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week4">
+          </div>
+        </td>
+        <td class="color">
+          <i class="fa fa-home"></i>
+          <i class="fa fa-briefcase"></i>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week5">
+          </div>
+        </td>
+        <td class="color">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week6"  disabled>
+          </div>
+        </td>
+        <td class="color">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="next_week7"  disabled>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-outline-danger btn-lg save_btn" onClick="sendData();">Save changes</button>
+  </div>
+
+  <div id="success" style="display: none" class="alert alert-success" role="alert">
+    Successfully Saved!
+  </div>
+  <div id="error" style="display: none" class="alert alert-danger" role="alert">
+    Error!
+  </div>
+
+  <div class="form-group">
+    <label for="departments">Departments:</label>
+    <select class="departments" id="departments" onchange="departmentsFilter()">
+      <option value="all">-all-</option>
+      <option value="1">Poslovi</option>
+      <option value="2">Polovni Automobili</option>
+      <option value="3">4zida</option>
+    </select>
+  </div>
+
+  <div class="one-group" id="poslovi-info">
+
+    <div class="d-flex justify-content-around page_selectors">
+
+      <div class=page_selector>
+        <input type="radio" name="poslovi" id="poslovi-current" onClick="loadPosloviTable('current_week');" checked> <label for="poslovi-current">Current week</label>
+      </div>
+
+      <div class=page_selector>
+        <input type="radio" name="poslovi" id="poslovi-next" onClick="loadPosloviTable('next_week');"> <label for="poslovi-next">Next week</label>
+      </div>
+
+    </div>
+
+    <table id="poslovi" class="days table table-borderless table-dark table-hover">
+      <thead>
+        <tr><th class="table-name" colspan="8">Poslovi</th></tr>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Monday</th>
+          <th scope="col">Tuesday</th>
+          <th scope="col">Wednesday</th>
+          <th scope="col">Thursday</th>
+          <th scope="col">Friday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </div>
+
+  <div class="one-group" id="polovni-info">
+
+    <div class="d-flex justify-content-around page_selectors">
+
+      <div class=page_selector>
+        <input type="radio" name="polovni" id="polovni-current" onClick="loadPolovniTable('current_week');" checked> <label for="polovni-current">Current week</label>
+      </div>
+
+      <div class=page_selector>
+        <input type="radio" name="polovni" id="polovni-next" onClick="loadPolovniTable('next_week');"> <label for="polovni-next">Next week</label>
+      </div>
+
+    </div>
+
+    <table id="polovni_automobili" class="days table table-borderless table-dark table-hover">
+      <thead>
+        <tr><th class="table-name" colspan="8">Polovni Automobili</th></tr>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Monday</th>
+          <th scope="col">Tuesday</th>
+          <th scope="col">Wednesday</th>
+          <th scope="col">Thursday</th>
+          <th scope="col">Friday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
+        </tr>
+        <tbody></tbody>
+      </thead>
+    </table>
+  </div>
+
+  <div class="one-group" id="4zida-info">
+
+    <div class="d-flex justify-content-around page_selectors">
+
+      <div class=page_selector>
+        <input type="radio" name="4zida" id="4zida-current" onClick="loadFourzidaTable('current_week');" checked> <label for="4zida-current">Current week</label>
+      </div>
+
+      <div class=page_selector>
+        <input type="radio" name="4zida" id="4zida-next" onClick="loadFourzidaTable('next_week');"> <label for="4zida-next">Next week</label>
+      </div>
+
+    </div>
+
+    <table id="4zida" class="days table table-borderless table-dark table-hover">
+      <thead>
+        <tr><th class="table-name" colspan="8">4zida</th></tr>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Monday</th>
+          <th scope="col">Tuesday</th>
+          <th scope="col">Wednesday</th>
+          <th scope="col">Thursday</th>
+          <th scope="col">Friday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Saturday</th>
+          <th scope="col" style="color: #b3b3b3 !important">Sunday</th>
+        </tr>
+        <tbody></tbody>
+      </thead>
+    </table>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
