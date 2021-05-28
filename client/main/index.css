@@ -30,6 +30,7 @@ td:not(.selector td, .not-working, .worker_name) {
 
 .selector {
   color: black !important;
+  min-width: 500px;
 }
 
 .selector tr:nth-child(2) td {
@@ -39,6 +40,7 @@ td:not(.selector td, .not-working, .worker_name) {
 .selected_name {
   background-color: orange !important;
   text-align: center;
+  font-size: 25px;
 }
 
 .work_selector {
@@ -70,9 +72,9 @@ td:not(.selector td, .not-working, .worker_name) {
 }
 
 .one-group {
-  padding: 10px 40px;
+  padding: 30px 40px 0 40px;
   margin: 40px 0;
-  border-bottom: 3px solid #a1b8f7;
+  border-top: 3px solid #a1b8f7;
 }
 
 .office {
@@ -81,6 +83,54 @@ td:not(.selector td, .not-working, .worker_name) {
 
 .home {
   background-color: #00cc66 !important;
+}
+
+.form-switch {
+  display: inline-block;
+  margin-left: -25px;
+}
+
+.color {
+  position: relative;
+}
+
+.fa-home {
+  position: relative;
+  top: -5px;
+  color: #66cc66;
+  font-size: 25px;
+}
+
+.fa-briefcase {
+  position: relative;
+  top: -5px;
+  left: 45px;
+  color: #7096f5;
+  font-size: 25px;
+}
+
+.alert {
+  width: 30%;
+  min-width: 200px;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 20%;
+  min-width: 200px;
+  margin: 0 auto;
+}
+
+.departments {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #9c9c9c;
+  border-radius: 8px;
+}
+
+.departments:focus {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
 }
 
 @media screen and (max-width: 1300px) {
@@ -93,9 +143,6 @@ td:not(.selector td, .not-working, .worker_name) {
   table {
     font-size: 2.5vw !important;
   }
-}
-
-@media screen and (max-width: 1000px) {
   .page_selector {
     font-size: 2.5vw;
   }

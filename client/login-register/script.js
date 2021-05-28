@@ -9,11 +9,11 @@ const changeFormHeight = (param) => {
 
   switch (param) {
     case "login":
-      form.style.minHeight = "450px";
+      form.style.minHeight = "470px";
       break;
 
     case "register":
-      form.style.minHeight = "850px";
+      form.style.minHeight = "920px";
       break;
 
     default:
@@ -28,7 +28,7 @@ document
   .getElementById("tab-2")
   .addEventListener("click", () => changeFormHeight("register"));
 
-const checkPasswords = (event) => {
+const checkPasswords = () => {
   const password = document.getElementById("pass-register");
   const confirmPassword = document.getElementById("pass-confirm");
 
@@ -47,15 +47,14 @@ const checkPasswords = (event) => {
   };
 
   if (!passwordRegex.test(password.value)) {
-    event.preventDefault();
-
     password.style.border = "1px solid #f00";
     passwordLabel.style.color = "#f00";
     passwordLabel.innerHTML =
       "PASSWORD (your password must contain at least 8 characters, 1 number, 1 lowercase, 1 uppercase character and only numbers and letters!)";
     password.addEventListener("change", reset);
+
+    return false;
   } else if (password.value !== confirmPassword.value) {
-    event.preventDefault();
     password.style.border = "1px solid #f00";
     confirmPassword.style.border = "1px solid #f00";
 
@@ -64,9 +63,120 @@ const checkPasswords = (event) => {
 
     password.addEventListener("change", reset);
     confirmPassword.addEventListener("change", reset);
+
+    return false;
+  } else {
+    return true;
   }
 };
 
-document
-  .getElementById("register")
-  .addEventListener("submit", (event) => checkPasswords(event));
+const checkDepartmentSelected = () => {
+  const departmentLabel = document.getElementById("department-label");
+  const department = document.getElementById("department");
+
+  const reset = () => {
+    departmentLabel.innerHTML = "DEPARTMENT";
+    departmentLabel.style.color = "#aaa";
+    department.style.border = "none";
+  };
+
+  if (department.value === -1) {
+    departmentLabel.innerHTML = "DEPARTMENT (Please select one!)";
+    departmentLabel.style.color = "#f00";
+    department.style.border = "1px solid #f00";
+
+    department.addEventListener("change", reset);
+    return false;
+  }
+  return true;
+};
+
+const login = async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById("email-login").value;
+  const password = document.getElementById("pass-login").value;
+
+  const data = {
+    email,
+    password,
+  };
+
+  await fetch("https://example.com/profile", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      window.location.replace("../main/index.html");
+    })
+    .catch((error) => {
+      const errorAlert = document.getElementById("error-login");
+
+      errorAlert.style.display = "block";
+
+      const hideErrorAlert = () => {
+        errorAlert.style.display = "none";
+      };
+      email.addEventListener("change", hideErrorAlert);
+      password.addEventListener("change", hideErrorAlert);
+
+      console.error("Error:", error);
+    });
+};
+
+const register = async (event) => {
+  event.preventDefault();
+
+  if (checkPasswords() && checkDepartmentSelected()) {
+    const fName = document.getElementById("f-name").value;
+    const lName = document.getElementById("l-name").value;
+    const password = document.getElementById("pass-register").value;
+    const email = document.getElementById("email-register").value;
+    const department = document.getElementById("department").value;
+
+    const data = {
+      fName,
+      lName,
+      password,
+      email,
+      department,
+    };
+
+    await fetch("https://example.com/profile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        document.getElementById("error-register").style.display = "none";
+        document.getElementById("success-register").style.display = "block";
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        const errorAlert = document.getElementById("error-register");
+
+        errorAlert.style.display = "block";
+        document.getElementById("success-register").style.display = "none";
+
+        const hideErrorAlert = () => {
+          errorAlert.style.display = "none";
+        };
+
+        fName.addEventListener("change", hideErrorAlert);
+        lName.addEventListener("change", hideErrorAlert);
+        password.addEventListener("change", hideErrorAlert);
+        email.addEventListener("change", hideErrorAlert);
+        department.addEventListener("change", hideErrorAlert);
+
+        console.error("Error:", error);
+      });
+  }
+};

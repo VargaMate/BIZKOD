@@ -13,25 +13,15 @@
     <div class="row">
       <div class="col-md-6 mx-auto p-0">
           <div class="card">
-              <?php
-              if (isset($_GET['err_num']) && !empty($_GET['err_num'])){
-                  $error = $_GET['err_num'];
-                  if($error=='5'){
-                      echo '<div>Email is already used</div>';
-                  }
-
-              }
-              ?>
               <div class="login-box" id="login-box">
                   <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                       <div class="login-space">
-                          <form class="login" method="POST" action="classes/data_login.php">
+                          <form class="login" method="POST" action="">
                               <div class="group"> <label for="email-login" class="label">Email Address</label> <input id="email-login" name="email" type="email" class="input" placeholder="Enter your email address" required> </div>
                               <div class="group"> <label for="pass-login" class="label">Password</label> <input id="pass-login" name="password" type="password" class="input" data-type="password" placeholder="Enter your password" required> </div>
                               <div class="group" style="margin-top: 50px"> <input type="submit" name="login" class="button" value="Sign In"> </div>
                           </form>
-                          <form id="register" class="sign-up-form" method="POST" action="classes/data_registration.php">
-
+                          <form id="register" class="sign-up-form" method="POST" action="">
                               <div class="group"> <label for="f-name" class="label">First Name</label> <input id="f-name" name="f-name" type="text" class="input" placeholder="Type your Fist Name" required> </div>
                               <div class="group"> <label for="l-name" class="label">Last Name</label> <input id="l-name" name="l-name" type="text" class="input" placeholder="Type your Last Name" required> </div>
                               <div class="group"> <label id="register-password" for="pass-register" class="label">Password</label> <input id="pass-register" name="password" type="password" class="input" data-type="password" placeholder="Create your password" required> </div>
