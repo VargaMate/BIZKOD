@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18eb7986-373e-4b9c-8532-18503c385416" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/login-register/biz_kod.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/login-register/classes/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/css/Login-Form-Dark-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/fonts/ionicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/img/star-sky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/assets/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bizkod_login/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/bizkod.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/data_login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/data_registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/db_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/classes/registered.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/classes/registered.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/login-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/login-register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/login-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/login-register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login-register/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/login-register/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main/index.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1t9ejmqfQSsxFxeQo42vrhtOJOY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\BIZKOD\client\login-register" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18eb7986-373e-4b9c-8532-18503c385416" name="Default Changelist" comment="" />
+      <created>1622185872927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622185872927</updated>
+      <workItem from="1622185875478" duration="5504000" />
+      <workItem from="1622191537259" duration="645000" />
+      <workItem from="1622203447018" duration="13000" />
+      <workItem from="1622203488022" duration="744000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
