@@ -1,55 +1,3 @@
-//tables data from server
-const tablesData = {
-  poslovi: {
-    current_week: [
-      ["Akos", 1, 0, 1, 1, 0, -1, -1],
-      ["Makos", 1, 0, 1, 1, 1, -1, -1],
-      ["Bence", 1, 0, 1, 1, 1, -1, -1],
-      ["Vladimir", 1, 0, 1, 1, 1, -1, -1],
-      ["John", 1, 0, 1, 1, 1, -1, -1],
-    ],
-    next_week: [
-      ["Akos", 0, 0, 0, 1, 0, -1, -1],
-      ["Makos", 0, 0, 0, 1, 0, -1, -1],
-      ["Bence", 0, 0, 0, 1, 0, -1, -1],
-      ["Vladimir", 0, 0, 0, 1, 0, -1, -1],
-      ["John", 0, 0, 0, 1, 0, -1, -1],
-    ],
-  },
-  polovni_automobili: {
-    current_week: [
-      ["Akos", 1, 0, 1, 1, 1, -1, -1],
-      ["Makos", 1, 0, 1, 1, 1, -1, -1],
-      ["Bence", 1, 0, 1, 1, 1, -1, -1],
-      ["Vladimir", 1, 0, 1, 1, 1, -1, -1],
-      ["John", 1, 0, 1, 1, 1, -1, -1],
-    ],
-    next_week: [
-      ["Akos", 0, 0, 0, 1, 0, -1, -1],
-      ["Makos", 0, 0, 0, 1, 0, -1, -1],
-      ["Bence", 0, 0, 0, 1, 0, -1, -1],
-      ["Vladimir", 0, 0, 0, 1, 0, -1, -1],
-      ["John", 0, 0, 0, 1, 0, -1, -1],
-    ],
-  },
-  fourzida: {
-    current_week: [
-      ["Akos", 1, 0, 1, 1, 1, -1, -1],
-      ["Makos", 1, 0, 1, 1, 1, -1, -1],
-      ["Bence", 1, 0, 1, 1, 1, -1, -1],
-      ["Vladimir", 1, 0, 1, 1, 1, -1, -1],
-      ["John", 1, 0, 1, 1, 1, -1, -1],
-    ],
-    next_week: [
-      ["Akos", 0, 0, 0, 1, 0, -1, -1],
-      ["Makos", 0, 0, 0, 1, 0, -1, -1],
-      ["Bence", 0, 0, 0, 1, 0, -1, -1],
-      ["Vladimir", 0, 0, 0, 1, 0, -1, -1],
-      ["John", 0, 0, 0, 1, 0, -1, -1],
-    ],
-  },
-};
-
 //user data from server
 const user = {
   user_f_name: "Akos",
@@ -63,17 +11,17 @@ document.getElementById("username").innerHTML =
 const loadUser = async () => {
   const username = document.getElementById("username");
 
-  await fetch("https://example.com/profile", {
-    method: "GET",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-      username.innerHTML = data.user.user_f_name + " " + data.user.user_l_name;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  // await fetch("", {
+  //   method: "GET",
+  // })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log("Success:", data);
+  //     username.innerHTML = data.user.user_f_name + " " + data.user.user_l_name;
+  //   })
+  //   .catch((error) => {
+  //     console.log("Error:", error);
+  //   });
 };
 
 const sendData = async () => {
@@ -138,81 +86,90 @@ const sendData = async () => {
   }
 };
 
-const loadTablesCurrentWeek = () => {
-  const posloviTable = document.getElementById("poslovi");
-  const posloviRowsCount = tablesData.poslovi.current_week.length;
+const loadTablesCurrentWeek = async () => {
+  await fetch("../../server/get-data.php", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const posloviTable = document.getElementById("poslovi");
+      const posloviRowsCount = data.poslovi.current_week.length;
 
-  for (let i = 0; i < posloviRowsCount; i++) {
-    const row = posloviTable.insertRow(i + 2);
-    for (let j = 0; j < 8; j++) {
-      const cell = row.insertCell(j);
+      for (let i = 0; i < posloviRowsCount; i++) {
+        const row = posloviTable.insertRow(i + 2);
+        for (let j = 0; j < 8; j++) {
+          const cell = row.insertCell(j);
 
-      if (j === 0) {
-        cell.classList.add("worker_name");
-        cell.innerHTML = tablesData.poslovi.current_week[i][j];
-      } else if (tablesData.poslovi.current_week[i][j] === 0) {
-        cell.classList.add("office");
-        cell.innerHTML = "Office";
-      } else if (tablesData.poslovi.current_week[i][j] === 1) {
-        cell.classList.add("home");
-        cell.innerHTML = "Home";
-      } else {
-        cell.style.color = "#a3a3a3";
-        cell.classList.add("not-working");
-        cell.innerHTML = "Not working day";
+          if (j === 0) {
+            cell.classList.add("worker_name");
+            cell.innerHTML = data.poslovi.current_week[i][j];
+          } else if (data.poslovi.current_week[i][j] === 0) {
+            cell.classList.add("office");
+            cell.innerHTML = "Office";
+          } else if (data.poslovi.current_week[i][j] === 1) {
+            cell.classList.add("home");
+            cell.innerHTML = "Home";
+          } else {
+            cell.style.color = "#a3a3a3";
+            cell.classList.add("not-working");
+            cell.innerHTML = "Not working day";
+          }
+        }
       }
-    }
-  }
 
-  const polovniTable = document.getElementById("polovni_automobili");
-  const polovniRowsCount = tablesData.polovni_automobili.current_week.length;
+      const polovniTable = document.getElementById("polovni_automobili");
+      const polovniRowsCount = data.polovni_automobili.current_week.length;
 
-  for (let i = 0; i < polovniRowsCount; i++) {
-    const row = polovniTable.insertRow(i + 2);
-    for (let j = 0; j < 8; j++) {
-      const cell = row.insertCell(j);
+      for (let i = 0; i < polovniRowsCount; i++) {
+        const row = polovniTable.insertRow(i + 2);
+        for (let j = 0; j < 8; j++) {
+          const cell = row.insertCell(j);
 
-      if (j === 0) {
-        cell.classList.add("worker_name");
-        cell.innerHTML = tablesData.polovni_automobili.current_week[i][j];
-      } else if (tablesData.polovni_automobili.current_week[i][j] === 0) {
-        cell.classList.add("office");
-        cell.innerHTML = "Office";
-      } else if (tablesData.polovni_automobili.current_week[i][j] === 1) {
-        cell.classList.add("home");
-        cell.innerHTML = "Home";
-      } else {
-        cell.style.color = "#a3a3a3";
-        cell.classList.add("not-working");
-        cell.innerHTML = "Not working day";
+          if (j === 0) {
+            cell.classList.add("worker_name");
+            cell.innerHTML = data.polovni_automobili.current_week[i][j];
+          } else if (data.polovni_automobili.current_week[i][j] === 0) {
+            cell.classList.add("office");
+            cell.innerHTML = "Office";
+          } else if (data.polovni_automobili.current_week[i][j] === 1) {
+            cell.classList.add("home");
+            cell.innerHTML = "Home";
+          } else {
+            cell.style.color = "#a3a3a3";
+            cell.classList.add("not-working");
+            cell.innerHTML = "Not working day";
+          }
+        }
       }
-    }
-  }
 
-  const fourzidaTable = document.getElementById("4zida");
-  const fourzidaRowsCount = tablesData.fourzida.current_week.length;
+      const fourzidaTable = document.getElementById("4zida");
+      const fourzidaRowsCount = data.fourzida.current_week.length;
 
-  for (let i = 0; i < fourzidaRowsCount; i++) {
-    const row = fourzidaTable.insertRow(i + 2);
-    for (let j = 0; j < 8; j++) {
-      const cell = row.insertCell(j);
+      for (let i = 0; i < fourzidaRowsCount; i++) {
+        const row = fourzidaTable.insertRow(i + 2);
+        for (let j = 0; j < 8; j++) {
+          const cell = row.insertCell(j);
 
-      if (j === 0) {
-        cell.classList.add("worker_name");
-        cell.innerHTML = tablesData.fourzida.current_week[i][j];
-      } else if (tablesData.fourzida.current_week[i][j] === 0) {
-        cell.classList.add("office");
-        cell.innerHTML = "Office";
-      } else if (tablesData.fourzida.current_week[i][j] === 1) {
-        cell.classList.add("home");
-        cell.innerHTML = "Home";
-      } else {
-        cell.style.color = "#a3a3a3";
-        cell.classList.add("not-working");
-        cell.innerHTML = "Not working day";
+          if (j === 0) {
+            cell.classList.add("worker_name");
+            cell.innerHTML = data.fourzida.current_week[i][j];
+          } else if (data.fourzida.current_week[i][j] === 0) {
+            cell.classList.add("office");
+            cell.innerHTML = "Office";
+          } else if (data.fourzida.current_week[i][j] === 1) {
+            cell.classList.add("home");
+            cell.innerHTML = "Home";
+          } else {
+            cell.style.color = "#a3a3a3";
+            cell.classList.add("not-working");
+            cell.innerHTML = "Not working day";
+          }
+        }
       }
-    }
-  }
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
 };
 
 function loadPosloviTable(week) {

@@ -130,6 +130,7 @@ td:not(.selector td, .not-working, .worker_name) {
 
 .departments:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
 }
 
 @media screen and (max-width: 1300px) {
